@@ -1,0 +1,7 @@
+bayeux_server:  localhost:9292
+email_info: "no@mail.plz"
+database: {config: "rails_project/config/database.yml", env: "development"}
+
+
+
+
