@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'control_switch_daemon'
+
+class BinRunner < Thor
+  default_task :help
+
+  desc "install", "Installs the gem as an /etc/init.d script"
+  def install
+    ControlSwitchDaemon.install
+  end
+
+  desc "run", "Called from init script to become a system daemon"
+  def run
+    ControlSwitchDaemon.run
+  end
+  
+  desc "help", "Explains the gem's usage on the command line."
+  def help
+    puts ControlSwitchDaemon.help
+  end
+  
+end
+
+BinRunner.start

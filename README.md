@@ -1,26 +1,30 @@
 # ControlSwitchDaemon
 
-TODO: Write a gem description
+This is a daemon that monitor's h/w sensors and reports things of interest.  See the rails project control_switch for details.  
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'control_switch_daemon'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install control_switch_daemon
 
+Then have it startup automatically as an init.d script
+
+    $ control_switch_daemon install
+
+## Configuration
+
+Edit the file in ~/config/control_switch/daemon
+
 ## Usage
 
-TODO: Write usage instructions here
+    This daemon will watch the hardware sensors and when it detects something valuable. 
+This daemon can signal events using:
+  1. Faye pub/sub bayeux
+  2. Write directly to a database
+  3. Echo to tty1??? 
+  4. Send an email
+  5. Write to a rotating log?
 
 ## Contributing
 
